@@ -26,15 +26,15 @@
 </head>
 <body>
 	<%
-	double height = Integer.parseInt(request.getParameter("height"));
-	double weight = Integer.parseInt(request.getParameter("weight"));
+	double height = Double.parseDouble(request.getParameter("height"));
+	double weight = Double.parseDouble(request.getParameter("weight"));
 	double BMI = weight / ((height / 100.0) * (height / 100.0));
 	String result = null;
 	if (BMI <= 20) {
 		result = "저체중";
-	} else if (21 <= BMI && BMI <= 25) {
+	} else if (20 <= BMI && BMI <= 25) {
 		result = "정상";
-	} else if (26 <= BMI && BMI <= 30) {
+	} else if (25 <= BMI && BMI <= 31) {
 		result = "과체중";
 	} else if (BMI <= 31) {
 		result = "비만";
