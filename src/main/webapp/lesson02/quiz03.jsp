@@ -33,7 +33,7 @@
 					class="form-control col-2 mr-3 "> cm <input type="text"
 					name="weight" id="weight" placeholder="몸무게를 입력하세요."
 					class="form-control col-2 mr-3 ml-3"> kg
-				<button type="submit" class="btn btn-info ml-3">계산</button>
+				<button type="submit" class="btn btn-danger ml-3">계산</button>
 			</div>
 		</form>
 	</div>
