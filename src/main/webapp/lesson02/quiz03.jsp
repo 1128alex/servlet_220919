@@ -36,7 +36,6 @@
 				<button type="submit" class="btn btn-info ml-3">계산</button>
 			</div>
 		</form>
-
 	</div>
 </body>
 </html>
