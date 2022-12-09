@@ -32,11 +32,11 @@
 	String result = null;
 	if (BMI <= 20) {
 		result = "저체중";
-	} else if (20 <= BMI && BMI <= 25) {
+	} else if (BMI <= 25) {
 		result = "정상";
-	} else if (25 <= BMI && BMI <= 31) {
-		result = "과체중";
 	} else if (BMI <= 31) {
+		result = "과체중";
+	} else if (31 <= BMI) {
 		result = "비만";
 	}
 	%>

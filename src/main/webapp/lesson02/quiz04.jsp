@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>체격 조건</title>
+<title>계산기</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -26,14 +26,17 @@
 </head>
 <body>
 	<div class="container">
-		<h1>체격 조건 입력</h1>
-		<form method="get" action="/lesson02/quiz03_1.jsp">
+		<form method="post" action="/lesson02/quiz04_1.jsp">
+			<h1>사칙 연산 계산기</h1>
 			<div class="d-flex">
-				<input type="text" name="height" id="height" placeholder="키를 입력하세요."
-					class="form-control col-2 mr-3 "> cm <input type="text"
-					name="weight" id="weight" placeholder="몸무게를 입력하세요."
-					class="form-control col-2 mr-3 ml-3"> kg
-				<button type="submit" class="btn btn-info ml-3">계산</button>
+				<input type="text" name="firstNum" class="col-2 form-control mr-2">
+				<select name="operator" class="form-control col-1 mr-2">
+					<option>+</option>
+					<option>-</option>
+					<option>*</option>
+					<option>/</option>
+				</select> <input type="text" name="secondNum" class="col-2 form-control mr-2">
+				<button type="submit" class="btn btn-success">계산하기</button>
 			</div>
 		</form>
 	</div>

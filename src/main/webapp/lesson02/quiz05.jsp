@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>체격 조건</title>
+<title>길이 변환</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -26,15 +26,21 @@
 </head>
 <body>
 	<div class="container">
-		<h1>체격 조건 입력</h1>
-		<form method="get" action="/lesson02/quiz03_1.jsp">
-			<div class="d-flex">
-				<input type="text" name="height" id="height" placeholder="키를 입력하세요."
-					class="form-control col-2 mr-3 "> cm <input type="text"
-					name="weight" id="weight" placeholder="몸무게를 입력하세요."
-					class="form-control col-2 mr-3 ml-3"> kg
-				<button type="submit" class="btn btn-info ml-3">계산</button>
+		<h1>길이 변환</h1>
+		<form method="post" action="/lesson02/quiz05_1.jsp">
+			<div class="d-flex align-items-end">
+				<input type="text" name="cm" placeholder="cm"
+					class="form-control col-2 mr-2"> cm
 			</div>
+			<div class="mt-2">
+				<label>인치 <input type="checkbox" name="unit" value="inch"
+					class="mr-2"></label> <label>야드 <input type="checkbox"
+					name="unit" value="yard" class="mr-2"></label> <label>피트 <input
+					type="checkbox" name="unit" value="feet" class="mr-2">
+				</label> <label>미터 <input type="checkbox" name="unit" value="meter"
+					class="mr-2"></label><br>
+			</div>
+			<button type="submit" class="btn btn-success">변환하기</button>
 		</form>
 	</div>
 </body>

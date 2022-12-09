@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>체격 조건</title>
+<title>길이 변환</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -25,17 +25,37 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+	<%
+	int cm = Integer.parseInt(request.getParameter("cm"));
+	String unitArr[] = request.getParameterValues("unit");
+	%>
+
 	<div class="container">
-		<h1>체격 조건 입력</h1>
-		<form method="get" action="/lesson02/quiz03_1.jsp">
-			<div class="d-flex">
-				<input type="text" name="height" id="height" placeholder="키를 입력하세요."
-					class="form-control col-2 mr-3 "> cm <input type="text"
-					name="weight" id="weight" placeholder="몸무게를 입력하세요."
-					class="form-control col-2 mr-3 ml-3"> kg
-				<button type="submit" class="btn btn-info ml-3">계산</button>
-			</div>
-		</form>
+		<h1>길이 변환 결과</h1>
+		<h4><%=cm%>cm
+		</h4>
+		<hr>
+		<h3>
+			<%
+			if (unitArr != null) {
+				for (String unit : unitArr) {
+					if (unit.equals("inch")) {
+				double inch = (cm * 0.3937008);
+				out.print(inch + " in<br>");
+					} else if (unit.equals("yard")) {
+				double yard = (cm * 0.0109361);
+				out.print(yard + " yd<br>");
+					} else if (unit.equals("feet")) {
+				double feet = (cm * 0.0328084);
+				out.print(feet + " ft<br>");
+					} else if (unit.equals("meter")) {
+				double meter = (cm / 100.0);
+				out.print(meter + " m<br>");
+					}
+				}
+			}
+			%>
+		</h3>
 	</div>
 </body>
 </html>
