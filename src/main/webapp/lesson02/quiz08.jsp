@@ -89,10 +89,12 @@
 				<%
 				for (Map<String, Object> item : list) {
 				%>
-				<tr><%=item.get("id")%></tr>
-				<tr><%=item.get("image")%></tr>
 				<tr>
-					<a href="/lesson02/quiz08_1.jsp"><%=item.get("title")%></a>
+
+					<td><%=item.get("id")%></td>
+					<td><img src="<%=item.get("image")%>" alt="bookpic"
+						height="100"></td>
+					<td><a href="/lesson02/quiz08_1.jsp?id=<%=item.get("id")%>"><%=item.get("title")%></a></td>
 				</tr>
 				<%
 				}
