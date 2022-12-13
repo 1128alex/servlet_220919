@@ -90,7 +90,6 @@
 				for (Map<String, Object> item : list) {
 				%>
 				<tr>
-
 					<td><%=item.get("id")%></td>
 					<td><img src="<%=item.get("image")%>" alt="bookpic"
 						height="100"></td>

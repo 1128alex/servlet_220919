@@ -84,14 +84,15 @@
 	<div class="container d-flex">
 		<img src="<%=item.get("image")%>" class="mr-3" height="400">
 		<div>
-			<h1 class="font-weight-bold"><%=item.get("title")%></h1>
-			<h2 class="text-info"><%=item.get("author")%></h2>
-			<h3 class="text-secondary"><%=item.get("publisher")%></h3>
+			<div class="display-1 font-weight-bold"><%=item.get("title")%></h1>
+				<h2 class="display-2 text-info"><%=item.get("author")%></h2>
+				<h3 class="display-4 text-secondary"><%=item.get("publisher")%></h3>
+			</div>
 		</div>
-	</div>
-	<%
-	}
-	}
-	%>
+		<%
+		}
+		}
+		%>
+	
 </body>
 </html>
