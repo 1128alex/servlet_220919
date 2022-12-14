@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<ul class="nav pt-3">
+<ul class="nav">
 	<li class="nav-item"><a
 		href="/lesson03/quiz02/template.jsp?category=chart"
 		class="nav-link font-weight-bold" id="menu">멜롱차트</a></li>

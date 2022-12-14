@@ -86,15 +86,10 @@ musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
 %>
 
-
-
-
-
-
 <%
 String musicId = request.getParameter("musicId");
 String search = request.getParameter("search");
-if (musicId == null && search == "") {
+if (musicId == null && (search == null || search == "")) {
 %>
 <div class="w-100 mb-5" id="banner">
 	<div class="d-flex mr-4 ml-4 mt-4 mb-4 w-100">
@@ -104,7 +99,8 @@ if (musicId == null && search == "") {
 			<h2 class="font-weight-bold"><%=artistInfo.get("name")%><!-- 가수 이름 -->
 			</h2>
 			<span class="font-weight-bold"><%=artistInfo.get("agency")%><!-- 소속사 --></span>
-			<br> <span class="font-weight-bold"><%=artistInfo.get("debute")%><!-- debut --></span>
+			<br> <span class="font-weight-bold"><%=artistInfo.get("debute")%>
+				데뷔<!-- debut --></span>
 		</div>
 	</div>
 </div>
@@ -124,7 +120,7 @@ if (musicId == null && search == "") {
 		<tr>
 			<td><%=item.get("id")%></td>
 			<td><a
-				href="lesson03/quiz02/template.jsp?musicId=<%=item.get("id")%>"><%=item.get("title")%></a></td>
+				href="/lesson03/quiz02/template.jsp?musicId=<%=item.get("id")%>"><%=item.get("title")%></a></td>
 			<td><%=item.get("album")%></td>
 		</tr>
 		<%
@@ -144,14 +140,14 @@ if (musicId == null && search == "") {
 	<div class="d-flex mr-4 ml-4 mt-4 mb-4 w-100">
 		<img alt="album-profile" src="<%=item.get("thumbnail")%>" class="mr-4">
 		<div>
-			<h1>
+			<h1 class="mb-0">
 				<%=item.get("title")%>
 				<!-- 노래 제목 -->
 			</h1>
-			<div class="mb-3">
-				<%-- <a href="/lesson03/quiz02/template.jsp"
+			<div class="mt-1 mb-2">
+				<a href="/lesson03/quiz02/template.jsp"
 					class="font-weight-bold text-success"><%=item.get("singer")%><!-- 가수이름 -->
-				</a> --%>
+				</a>
 			</div>
 			<pre>
 앨범       <%=item.get("album")%>
@@ -167,6 +163,8 @@ if (musicId == null && search == "") {
 	%>
 </div>
 <h3 class="font-weight-bold">가사</h3>
+<hr>
+<b>가사 정보 없음</b>
 <%
 }
 %>

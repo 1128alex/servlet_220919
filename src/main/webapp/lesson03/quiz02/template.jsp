@@ -24,20 +24,26 @@
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
 <style>
-.container {
-	height: 2000px;
-}
-
 header {
 	height: 110px;
 }
 
 nav {
-	height: 70px;
+	height: 60px;
 }
 
 a, a:hover {
 	text-decoration: none;
+}
+
+.form-control {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.btn {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 
 #banner {
@@ -50,7 +56,7 @@ a, a:hover {
 }
 
 footer {
-	height: 40px;
+	height: 80px;
 }
 
 .search {
@@ -59,6 +65,11 @@ footer {
 
 #menu, #menu:hover {
 	color: black;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder
+	{
+	color: transparent;
 }
 </style>
 </head>
@@ -73,7 +84,7 @@ footer {
 		<section>
 			<jsp:include page="content.jsp" />
 		</section>
-		<footer>
+		<footer class="mt-5">
 			<jsp:include page="footer.jsp" />
 		</footer>
 	</div>
