@@ -1,14 +1,10 @@
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>레이아웃(템플릿)</title>
+<title>멜롱</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -27,39 +23,59 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
-
 <style>
+.container {
+	height: 2000px;
+}
+
 header {
-	height: 50px;
+	height: 110px;
 }
 
-.bottom {
-	height: 700px;
+nav {
+	height: 70px;
 }
 
-.contents {
-	height: 90%;
+a, a:hover {
+	text-decoration: none;
+}
+
+#banner {
+	border-top: 1px solid;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+	border-right: 1px solid;
+	border-color: green;
+	height: 220px;
 }
 
 footer {
-	height: 10%;
+	height: 40px;
+}
+
+.search {
+	height: 40px;
+}
+
+#menu, #menu:hover {
+	color: black;
 }
 </style>
 </head>
 <body>
-
-	<div id="wrap" class="bg-dark">
-		<jsp:include page="header.jsp" />
-		<div class="bottom bg-warning d-flex">
+	<div class="container">
+		<header class="d-flex align-items-center">
+			<jsp:include page="header.jsp" />
+		</header>
+		<nav>
 			<jsp:include page="menu.jsp" />
-			<div class="right bg-success col-9">
-				<%
-				String contentName = "content2.jsp";
-				%>
-				<jsp:include page="<%=contentName%>" />
-				<jsp:include page="footer.jsp" />
-			</div>
-		</div>
+		</nav>
+		<section>
+			<jsp:include page="content.jsp" />
+		</section>
+		<footer>
+			<jsp:include page="footer.jsp" />
+		</footer>
 	</div>
 </body>
 </html>

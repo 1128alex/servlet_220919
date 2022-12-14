@@ -1,3 +1,4 @@
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,12 +30,12 @@ header {
 	height: 60px;
 }
 
-nav {
-	height: 50px;
+a, a:hover {
+	color: white;
 }
 
-ul {
-	list-style: none;
+nav {
+	height: 50px;
 }
 
 footer {
@@ -43,7 +44,141 @@ footer {
 </style>
 </head>
 <body>
+	<%
+	List<Map<String, String>> list = new ArrayList<>();
+	Map<String, String> map = new HashMap<String, String>() {
+		{
+			put("ch", "5");
+			put("name", "SBS");
+			put("category", "지상파");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "7");
+			put("name", "KBS2");
+			put("category", "지상파");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "9");
+			put("name", "KBS1");
+			put("category", "지상파");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "11");
+			put("name", "MBC");
+			put("category", "지상파");
+		}
+	};
+	list.add(map);
 
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "54");
+			put("name", "OCN");
+			put("category", "영화");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "56");
+			put("name", "Screen");
+			put("category", "영화");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "57");
+			put("name", "Mplex");
+			put("category", "영화");
+		}
+	};
+	list.add(map);
+
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "30");
+			put("name", "KBS 드라마");
+			put("category", "드라마");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "32");
+			put("name", "MBC 드라마");
+			put("category", "드라마");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "34");
+			put("name", "Olive");
+			put("category", "드라마");
+		}
+	};
+	list.add(map);
+
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "3");
+			put("name", "tvN");
+			put("category", "예능");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "28");
+			put("name", "MBC Every1");
+			put("category", "예능");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "48");
+			put("name", "JTBC2");
+			put("category", "예능");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "49");
+			put("name", "E채널");
+			put("category", "예능");
+		}
+	};
+	list.add(map);
+
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "120");
+			put("name", "SPOTV");
+			put("category", "스포츠");
+		}
+	};
+	list.add(map);
+	map = new HashMap<String, String>() {
+		{
+			put("ch", "121");
+			put("name", "KBSN 스포츠");
+			put("category", "스포츠");
+		}
+	};
+	list.add(map);
+	%>
 	<div class="container">
 		<header class="text-center text-danger pt-2">
 			<h3 class="font-weight-bold">Sk Broadband IPTV</h3>
@@ -51,18 +186,12 @@ footer {
 		<nav class="bg-danger pt-1">
 			<form method="get" action="/lesson03/quiz01/template.jsp">
 				<ul class="d-flex justify-content-around text-white">
-					<li><button type="submit" name="category" value="전체"
-							class="btn btn-danger">전체</button></li>
-					<li><button type="submit" name="category" value="지상파"
-							class="btn btn-danger">지상파</button></li>
-					<li><button type="submit" name="category" value="드라마"
-							class="btn btn-danger">드라마</button></li>
-					<li><button type="submit" name="category" value="예능"
-							class="btn btn-danger">예능</button></li>
-					<li><button type="submit" name="category" value="영화"
-							class="btn btn-danger">영화</button></li>
-					<li><button type="submit" name="category" value="스포츠"
-							class="btn btn-danger">스포츠</button></li>
+					<li class="nav-item"><a href="" class="nav-link">전체</a></li>
+					<li class="nav-item"><a href="" class="nav-link">지상파</a></li>
+					<li class="nav-item"><a href="" class="nav-link">드라마</a></li>
+					<li class="nav-item"><a href="" class="nav-link">예능</a></li>
+					<li class="nav-item"><a href="" class="nav-link">영화</a></li>
+					<li class="nav-item"><a href="" class="nav-link">스포츠</a></li>
 				</ul>
 			</form>
 		</nav>

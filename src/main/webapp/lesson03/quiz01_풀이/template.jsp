@@ -1,14 +1,10 @@
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>레이아웃(템플릿)</title>
+<title>채널 안내</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
@@ -30,36 +26,38 @@
 
 <style>
 header {
+	height: 60px;
+}
+
+a, a:hover {
+	color: white;
+}
+
+nav {
 	height: 50px;
 }
 
-.bottom {
-	height: 700px;
-}
-
-.contents {
-	height: 90%;
-}
-
 footer {
-	height: 10%;
+	height: 70px;
 }
 </style>
 </head>
 <body>
-
-	<div id="wrap" class="bg-dark">
-		<jsp:include page="header.jsp" />
-		<div class="bottom bg-warning d-flex">
-			<jsp:include page="menu.jsp" />
-			<div class="right bg-success col-9">
-				<%
-				String contentName = "content2.jsp";
-				%>
-				<jsp:include page="<%=contentName%>" />
-				<jsp:include page="footer.jsp" />
-			</div>
-		</div>
+	<div class="container">
+		<header class="text-center text-danger pt-2">
+			<jsp:include page="header.jsp" />
+		</header>
+		<nav class="bg-danger pt-1">
+			<form method="get" action="/lesson03/quiz01/template.jsp">
+				<jsp:include page="menu.jsp" />
+			</form>
+		</nav>
+		<section>
+			<jsp:include page="content.jsp" />
+		</section>
+		<footer class="text-center">
+			<jsp:include page="footer.jsp"></jsp:include>
+		</footer>
 	</div>
 </body>
 </html>
