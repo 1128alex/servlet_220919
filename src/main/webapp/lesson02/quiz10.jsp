@@ -30,23 +30,51 @@
 	<%
 	Calendar today = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+	today.set(Calendar.DATE, 1);
 	%>
 	<div class="container">
 		<h3 class="text-center font-weight-bold"><%=sdf.format(today.getTime())%></h3>
 		<table class="table text-center">
 			<thead>
 				<tr>
-					<td class="text-danger">일</td>
-					<td>월</td>
-					<td>화</td>
-					<td>수</td>
-					<td>목</td>
-					<td>금</td>
-					<td>토</td>
+					<th class="text-danger">일</th>
+					<th>월</th>
+					<th>화</th>
+					<th>수</th>
+					<th>목</th>
+					<th>금</th>
+					<th>토</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="display-4"></tr>
+				<%
+				for (int i = 0; i < (today.getActualMaximum(Calendar.DATE) / 7) + 1; i++) {
+				%>
+				<tr>
+					<%
+					for (int j = 1; j <= 7; j++) {
+						if (today.get(Calendar.DAY_OF_WEEK) == j) {
+							if (today.get(Calendar.DAY_OF_WEEK) != 1) {
+					%>
+					<td class="display-4"><%=today.get(Calendar.DATE)%></td>
+					<%
+					} else {
+					%>
+					<td class="display-4 text-danger"><%=today.get(Calendar.DATE)%></td>
+					<%
+					}
+					today.add(Calendar.DATE, 1);
+					} else {
+					%>
+					<td></td>
+					<%
+					}
+					}
+					%>
+				</tr>
+				<%
+				}
+				%>
 			</tbody>
 		</table>
 	</div>
